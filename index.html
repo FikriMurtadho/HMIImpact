@@ -41,22 +41,12 @@ html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden;cursor:none;line-height:1.65}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
-
-/* ── CURSOR ── */
 .cur{width:9px;height:9px;background:var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .18s,height .18s;mix-blend-mode:difference}
 .cur-ring{width:33px;height:33px;border:1.5px solid rgba(0,232,122,.32);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:all .3s cubic-bezier(.25,.46,.45,.94)}
-
-/* ── PARTICLES ── */
 .ptcl{position:fixed;width:2px;height:2px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:1;opacity:0;animation:fp var(--dur) var(--del) ease-in-out infinite}
 @keyframes fp{0%{transform:translateY(0) translateX(0);opacity:0}25%{opacity:.35}75%{opacity:.12}100%{transform:translateY(-95px) translateX(var(--dx));opacity:0}}
-
-/* ════════════════════════
-   SIDEBAR
-════════════════════════ */
 .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sw);background:rgba(9,15,10,.97);border-right:1px solid var(--border);z-index:500;display:flex;flex-direction:column;transition:width .32s cubic-bezier(.4,0,.2,1);overflow:hidden;backdrop-filter:blur(28px)}
 .sidebar.col{width:var(--sw2)}
-
-/* Logo */
 .sb-logo{padding:1.2rem 1rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid var(--border);flex-shrink:0;min-height:68px;cursor:pointer;transition:background .2s}
 .sb-logo:hover{background:rgba(45,184,74,.05)}
 .sb-logo-icon{width:36px;height:36px;flex-shrink:0;background:linear-gradient(135deg,#0a3016,#0e2248);border:1.5px solid var(--green);border-radius:var(--r3);display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:.78rem;font-weight:700;color:var(--accent)}
@@ -64,13 +54,10 @@ img{max-width:100%;display:block}
 .sb-logo-name{font-family:'Lora',serif;font-size:.9rem;font-weight:700;color:var(--cream);line-height:1.2}
 .sb-logo-tag{font-family:'JetBrains Mono',monospace;font-size:.55rem;color:var(--accent);letter-spacing:.17em;text-transform:uppercase;opacity:.7}
 .sidebar.col .sb-logo-txt{opacity:0;pointer-events:none}
-
-/* Nav area */
 .sb-nav{flex:1;overflow-y:auto;overflow-x:hidden;padding:.5rem 0;scrollbar-width:none}
 .sb-nav::-webkit-scrollbar{display:none}
 .sb-lbl{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.2);padding:.55rem 1rem .3rem;white-space:nowrap;overflow:hidden;transition:opacity .25s}
 .sidebar.col .sb-lbl{opacity:0}
-
 .ni{display:flex;align-items:center;gap:.78rem;padding:.66rem 1rem;cursor:pointer;position:relative;border-left:2px solid transparent;transition:background .2s,border-color .2s;white-space:nowrap}
 .ni:hover{background:rgba(45,184,74,.055)}
 .ni.act{border-left-color:var(--accent);background:rgba(0,232,122,.055)}
@@ -82,17 +69,15 @@ img{max-width:100%;display:block}
 .ni-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);margin-left:auto;flex-shrink:0;opacity:0;transition:opacity .2s}
 .ni.act .ni-dot{opacity:1}
 .sidebar.col .ni-dot{display:none}
-
-/* Doc shortcuts */
 .sb-docs{padding:.7rem .85rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:.45rem;flex-shrink:0;transition:opacity .25s}
 .sidebar.col .sb-docs{opacity:0;pointer-events:none}
 .sb-doc-lbl{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:.2rem}
-.sb-doc-btn{display:flex;align-items:center;gap:.6rem;padding:.58rem .85rem;background:rgba(45,184,74,.07);border:1px solid rgba(45,184,74,.17);border-radius:var(--r3);font-size:.79rem;font-weight:600;color:rgba(240,244,236,.72);cursor:pointer;transition:all .22s}
+.sb-doc-btn{display:flex;align-items:center;gap:.6rem;padding:.58rem .85rem;background:rgba(45,184,74,.07);border:1px solid rgba(45,184,74,.17);border-radius:var(--r3);font-size:.79rem;font-weight:600;color:rgba(240,244,236,.72);cursor:pointer;transition:all .22s;text-decoration:none}
 .sb-doc-btn:hover{background:rgba(45,184,74,.14);border-color:rgba(45,184,74,.38);color:var(--cream);transform:translateX(2px)}
 .sb-doc-btn.blue{background:rgba(42,95,212,.07);border-color:rgba(90,140,245,.17)}
 .sb-doc-btn.blue:hover{background:rgba(42,95,212,.14);border-color:rgba(90,140,245,.38)}
-
-/* Toggle */
+.sb-doc-btn.teal{background:rgba(26,184,157,.07);border-color:rgba(26,184,157,.22)}
+.sb-doc-btn.teal:hover{background:rgba(26,184,157,.14);border-color:rgba(26,184,157,.4);color:var(--cream)}
 .sb-toggle{padding:.8rem .85rem;border-top:1px solid var(--border);flex-shrink:0}
 .tog{width:100%;padding:.52rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.38);font-family:'JetBrains Mono',monospace;font-size:.64rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem;border-radius:var(--r3);transition:all .22s;letter-spacing:.06em}
 .tog:hover{background:rgba(45,184,74,.07);border-color:rgba(45,184,74,.25);color:var(--accent)}
@@ -100,10 +85,6 @@ img{max-width:100%;display:block}
 .sidebar.col .tog-arr{transform:rotate(180deg)}
 .tog-lbl{overflow:hidden;transition:opacity .25s}
 .sidebar.col .tog-lbl{opacity:0;width:0}
-
-/* ════════════════════════
-   TOPBAR (mobile)
-════════════════════════ */
 .topbar{display:none;position:fixed;top:0;left:0;right:0;height:var(--th);background:rgba(9,15,10,.97);border-bottom:1px solid var(--border);z-index:600;backdrop-filter:blur(20px);padding:0 1.1rem;align-items:center;justify-content:space-between}
 .tb-left{display:flex;align-items:center;gap:.65rem}
 .tb-icon{width:30px;height:30px;background:linear-gradient(135deg,#0a3016,#0e2248);border:1px solid var(--green);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:.68rem;font-weight:700;color:var(--accent)}
@@ -113,8 +94,6 @@ img{max-width:100%;display:block}
 .ham.open .hline:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
 .ham.open .hline:nth-child(2){opacity:0;transform:scaleX(0)}
 .ham.open .hline:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
-
-/* Drawer */
 .drawer{display:none;position:fixed;top:var(--th);left:0;right:0;bottom:0;background:rgba(9,15,10,.98);z-index:590;padding:1rem 1.1rem;overflow-y:auto;transform:translateX(-100%);transition:transform .32s cubic-bezier(.4,0,.2,1)}
 .drawer.open{transform:translateX(0)}
 .d-lbl{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.2);padding:.5rem .6rem .25rem;margin-top:.5rem}
@@ -124,30 +103,17 @@ img{max-width:100%;display:block}
 .dni-txt{font-size:.9rem;font-weight:600;color:rgba(240,244,236,.72)}
 .dni.act .dni-txt{color:var(--accent)}
 .d-doc-area{padding:.7rem .5rem;display:flex;flex-direction:column;gap:.5rem}
-.d-doc-btn{display:flex;align-items:center;gap:.65rem;padding:.75rem 1rem;border-radius:var(--r3);font-size:.87rem;font-weight:600;color:rgba(240,244,236,.8);cursor:pointer;transition:all .2s}
+.d-doc-btn{display:flex;align-items:center;gap:.65rem;padding:.75rem 1rem;border-radius:var(--r3);font-size:.87rem;font-weight:600;color:rgba(240,244,236,.8);cursor:pointer;transition:all .2s;text-decoration:none}
 .d-doc-btn.g{background:rgba(45,184,74,.08);border:1px solid rgba(45,184,74,.2)}
 .d-doc-btn.b{background:rgba(42,95,212,.08);border:1px solid rgba(90,140,245,.2)}
+.d-doc-btn.t{background:rgba(26,184,157,.08);border:1px solid rgba(26,184,157,.22)}
 .d-doc-btn:hover{transform:translateX(3px)}
-
-/* ════════════════════════
-   MAIN
-════════════════════════ */
 .main{margin-left:var(--sw);transition:margin-left .32s cubic-bezier(.4,0,.2,1);min-height:100vh}
 .main.col{margin-left:var(--sw2)}
-
-/* ════════════════════════
-   SECTIONS
-════════════════════════ */
 .sec{padding:5.5rem 4rem;position:relative;border-bottom:1px solid rgba(255,255,255,.04)}
 .sec:last-child{border-bottom:none}
-
-/* BGs */
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
-  background:radial-gradient(ellipse 75% 65% at 65% 48%,rgba(10,48,22,.55) 0%,transparent 70%),
-             radial-gradient(ellipse 55% 70% at 92% 18%,rgba(14,34,72,.4) 0%,transparent 60%),var(--bg)}
-#hero::after{content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(45,184,74,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(45,184,74,.025) 1px,transparent 1px);
-  background-size:54px 54px;pointer-events:none}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(ellipse 75% 65% at 65% 48%,rgba(10,48,22,.55) 0%,transparent 70%),radial-gradient(ellipse 55% 70% at 92% 18%,rgba(14,34,72,.4) 0%,transparent 60%),var(--bg)}
+#hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(45,184,74,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(45,184,74,.025) 1px,transparent 1px);background-size:54px 54px;pointer-events:none}
 #logo-sec{background:linear-gradient(160deg,#0d1e10 0%,#0b1628 100%)}
 #profil{background:linear-gradient(180deg,#0c1810 0%,#0b1411 100%)}
 #riwayat{background:#0b1411}
@@ -157,8 +123,6 @@ img{max-width:100%;display:block}
 #skills{background:var(--bg)}
 #prestasi{background:linear-gradient(180deg,var(--bg) 0%,#0c1810 100%)}
 #kontak{background:#0c1810}
-
-/* Section headings */
 .slbl{display:inline-flex;align-items:center;gap:.6rem;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
 .slbl::before{content:'';width:18px;height:1px;background:var(--accent)}
 .stitle{font-family:'Lora',serif;font-size:clamp(2.1rem,4vw,3.5rem);font-weight:700;line-height:1.08;margin-bottom:.9rem;letter-spacing:-.01em}
@@ -167,10 +131,6 @@ img{max-width:100%;display:block}
 .stitle .ga{color:var(--accent)}
 .stitle .gt{color:var(--teal)}
 .sdesc{font-size:1.01rem;line-height:1.85;color:var(--cream3);max-width:560px}
-
-/* ════════════════════════
-   HERO
-════════════════════════ */
 .hero-grid{display:grid;grid-template-columns:1fr 320px;gap:3.5rem;align-items:center;position:relative;z-index:2}
 .hero-tag{display:inline-flex;align-items:center;gap:.6rem;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:1.6rem;opacity:0}
 .hero-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blk 1.6s ease-in-out infinite}
@@ -180,11 +140,8 @@ img{max-width:100%;display:block}
 .hero-name .n2{display:block;color:var(--green2)}
 .hero-sub{font-size:.98rem;font-weight:400;color:var(--cream3);letter-spacing:.04em;margin-bottom:1.7rem;opacity:0}
 .hero-motto{font-family:'Lora',serif;font-style:italic;font-size:1.08rem;line-height:1.58;color:rgba(240,244,236,.85);padding:1rem 1.4rem;border-left:3px solid var(--accent);background:rgba(0,232,122,.045);border-radius:0 var(--r3) var(--r3) 0;max-width:470px;margin-bottom:2rem;opacity:0}
-
-/* Hero action buttons */
 .hero-actions{display:flex;gap:.85rem;flex-wrap:wrap;opacity:0;margin-bottom:1.4rem}
 .hero-docs{display:flex;gap:.75rem;flex-wrap:wrap;opacity:0}
-
 .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.6rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:700;border-radius:var(--r3);cursor:pointer;transition:all .25s;border:none;text-decoration:none}
 .btn-green{background:var(--green);color:#fff}
 .btn-green:hover{background:var(--green2);box-shadow:0 6px 22px rgba(45,184,74,.38);transform:translateY(-2px)}
@@ -192,15 +149,16 @@ img{max-width:100%;display:block}
 .btn-outline:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,232,122,.05);transform:translateY(-2px)}
 .btn-blue{background:var(--blue);color:#fff}
 .btn-blue:hover{background:var(--blue2);box-shadow:0 6px 22px rgba(42,95,212,.38);transform:translateY(-2px)}
+.btn-teal{background:rgba(26,184,157,.15);color:var(--teal);border:1.5px solid rgba(26,184,157,.4)}
+.btn-teal:hover{background:rgba(26,184,157,.28);box-shadow:0 6px 22px rgba(26,184,157,.3);transform:translateY(-2px)}
 .btn-amber{background:var(--amber);color:#fff}
 .btn-amber:hover{background:#f7b84a;box-shadow:0 6px 22px rgba(245,166,35,.35);transform:translateY(-2px)}
 .btn-sm{padding:.6rem 1.2rem;font-size:.8rem}
 .btn-icon{font-size:.95rem}
-
-/* Hero photo */
 .hphoto{display:flex;flex-direction:column;align-items:center;gap:1.1rem;opacity:0}
 .pframe{position:relative;width:100%;max-width:310px}
-.pborder{position:absolute;inset:-2px;background:linear-gradient(135deg,var(--green),var(--blue2),var(--accent));border-radius:calc(var(--r)+2px);z-index:0}
+/* BORDER FOTO: hijau - hitam - putih */
+.pborder{position:absolute;inset:-2px;background:linear-gradient(135deg,var(--green),#111a12,#f0f4ec,#111a12,var(--green2));border-radius:calc(var(--r)+2px);z-index:0}
 .pinner{position:relative;z-index:1;overflow:hidden;border-radius:var(--r);margin:2px;aspect-ratio:3/4;background:linear-gradient(160deg,#0a3016,#0e2248)}
 .pinner img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .55s}
 .pframe:hover .pinner img{transform:scale(1.04)}
@@ -211,34 +169,19 @@ img{max-width:100%;display:block}
 .pbadge-l{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.17em;color:var(--blue2);text-transform:uppercase;margin-bottom:.15rem}
 .pbadge-v{font-family:'Lora',serif;font-size:.9rem;font-weight:700;color:var(--cream)}
 .ptag{display:inline-flex;align-items:center;gap:.45rem;padding:.42rem .9rem;background:rgba(45,184,74,.07);border:1px solid rgba(45,184,74,.18);border-radius:50px;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
-
-/* Scroll hint */
 .scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.42rem;opacity:0;animation:fup .8s 2.8s forwards}
 .sline{width:1px;height:42px;background:linear-gradient(180deg,var(--accent),transparent);animation:sp 2s ease-in-out infinite}
 .stx{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.22em;color:rgba(255,255,255,.2)}
 @keyframes sp{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(.72)}}
 @keyframes fup{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
-
-/* ════════════════════════
-   MARQUEE
-════════════════════════ */
 .mwrap{overflow:hidden;padding:1rem 0;border-top:1px solid rgba(45,184,74,.07);border-bottom:1px solid rgba(45,184,74,.07);background:rgba(45,184,74,.022)}
 .mtrack{display:flex;gap:2.6rem;white-space:nowrap;animation:mq 26s linear infinite}
 .mtrack:hover{animation-play-state:paused}
 .mi{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:rgba(240,244,236,.14);flex-shrink:0}
 .mi .dot{color:var(--accent);margin:0 .65rem}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ════════════════════════
-   DOC DOWNLOAD STRIP
-════════════════════════ */
 .doc-strip{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:1.3rem 1.6rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--r);margin-top:2rem}
 .doc-strip-lbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream3);flex-shrink:0}
-
-/* ════════════════════════
-   LOGO SECTION
-════════════════════════ */
-/* ── LOGO SECTION LAYOUT ── */
 .logo-hero{display:flex;flex-direction:column;align-items:center;gap:1.1rem;padding:2.5rem 0 2rem;margin-top:2rem}
 .logo-circle{width:185px;height:185px;border-radius:50%;background:linear-gradient(135deg,rgba(10,48,22,.6),rgba(14,34,72,.55));border:2px solid rgba(45,184,74,.22);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 55px rgba(45,184,74,.09),0 0 110px rgba(45,184,74,.04);flex-shrink:0}
 .logo-circle::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(45,184,74,.1);animation:pulse 3s ease-in-out infinite}
@@ -250,22 +193,17 @@ img{max-width:100%;display:block}
 .logo-name{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--cream);text-align:center}
 .logo-tagline{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;text-align:center}
 .logo-content{width:100%;max-width:860px;margin:0 auto}
-
-/* Logo tabs */
 .logo-tabs{display:flex;gap:.45rem;margin-bottom:1.2rem;flex-wrap:wrap;justify-content:center}
 .logo-tab{padding:.48rem 1rem;font-family:'JetBrains Mono',monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:50px;border:1px solid var(--border2);color:var(--cream3);transition:all .22s;background:none;white-space:nowrap}
 .logo-tab.act,.logo-tab:hover{background:rgba(45,184,74,.12);border-color:rgba(45,184,74,.3);color:var(--accent)}
 .logo-panel{display:none}
 .logo-panel.show{display:block}
-
 .fil-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.82rem}
 .fil-item{display:flex;gap:1rem;align-items:flex-start;padding:1.05rem 1.2rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);transition:all .22s}
 .fil-item:hover{background:var(--surface2);border-color:rgba(45,184,74,.28)}
 .fil-ico{font-size:1.2rem;flex-shrink:0;margin-top:.05rem}
 .fil-body .fil-title{font-family:'Lora',serif;font-size:.95rem;font-weight:600;color:var(--cream);margin-bottom:.22rem}
 .fil-body .fil-desc{font-size:.84rem;line-height:1.72;color:var(--cream3)}
-
-/* Color palette */
 .color-row{display:flex;gap:.6rem;margin-top:.8rem;flex-wrap:wrap}
 .color-chip{display:flex;align-items:center;gap:.6rem;padding:.55rem .85rem;border-radius:var(--r3);background:var(--surface);border:1px solid var(--border2);transition:all .2s}
 .color-chip:hover{background:var(--surface2)}
@@ -273,24 +211,16 @@ img{max-width:100%;display:block}
 .color-chip-txt{font-size:.8rem;color:var(--cream2)}
 .color-chip-txt strong{color:var(--cream);font-weight:600;display:block;font-size:.82rem}
 .color-chip-txt span{font-size:.76rem;color:var(--cream3)}
-
-/* IMPACT grid */
 .impact-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.55rem;margin-top:.8rem}
 @media(max-width:600px){.impact-grid{grid-template-columns:repeat(3,1fr)}}
 .impact-cell{padding:.85rem .5rem;text-align:center;background:rgba(42,95,212,.08);border:1px solid rgba(90,140,245,.15);border-radius:var(--r3);transition:all .25s;cursor:default}
 .impact-cell:hover{background:rgba(42,95,212,.18);transform:translateY(-2px)}
 .ic-letter{font-family:'Lora',serif;font-size:1.45rem;font-weight:700;color:var(--blue2);display:block;margin-bottom:.18rem}
 .ic-word{font-size:.65rem;color:var(--cream3);font-weight:500}
-
-/* Makna quote */
 .makna-quote{padding:1.6rem 1.8rem;background:linear-gradient(135deg,rgba(10,48,22,.4),rgba(14,34,72,.3));border:1px solid rgba(45,184,74,.22);border-radius:var(--r2);position:relative;overflow:hidden;margin-top:.85rem}
 .makna-quote::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),var(--blue2),var(--accent))}
 .makna-quote .mq-lbl{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:.7rem}
 .makna-quote .mq-txt{font-family:'Lora',serif;font-size:.98rem;font-style:italic;color:var(--cream2);line-height:1.65}
-
-/* ════════════════════════
-   PROFIL
-════════════════════════ */
 .prof-layout{display:grid;grid-template-columns:248px 1fr;gap:2.8rem;margin-top:2.8rem;align-items:start}
 .prof-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;position:sticky;top:2rem}
 .pcard-img{width:100%;aspect-ratio:4/5;background:linear-gradient(160deg,#0a3016,#0e2248);position:relative;overflow:hidden}
@@ -308,8 +238,6 @@ img{max-width:100%;display:block}
 .pcard-ico{font-size:.8rem;flex-shrink:0;opacity:.52;margin-top:.05rem}
 .pcard-txt{font-size:.78rem;color:var(--cream3);line-height:1.5}
 .pcard-txt strong{font-weight:500;display:block;font-size:.65rem;font-family:'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--cream2)}
-
-/* Prof content */
 .pc{display:flex;flex-direction:column;gap:1.7rem}
 .pbio p{font-size:1rem;line-height:1.87;color:rgba(240,244,236,.68);margin-bottom:.85rem}
 .pbio p:last-child{margin-bottom:0}
@@ -325,10 +253,6 @@ img{max-width:100%;display:block}
 .sbox:hover{background:rgba(45,184,74,.07)}
 .sn{font-family:'Lora',serif;font-size:1.55rem;font-weight:700;color:var(--green2);margin-bottom:.2rem}
 .sl{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.13em;text-transform:uppercase;color:var(--cream3)}
-
-/* ════════════════════════
-   TIMELINE
-════════════════════════ */
 .tlwrap{display:grid;grid-template-columns:1fr 1fr;gap:3.2rem;margin-top:2.8rem}
 .tlcol-h{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:1.7rem;display:flex;align-items:center;gap:.72rem}
 .tl-tag{width:30px;height:30px;border-radius:7px;background:rgba(45,184,74,.1);border:1px solid rgba(45,184,74,.22);display:flex;align-items:center;justify-content:center;font-size:.82rem}
@@ -339,10 +263,6 @@ img{max-width:100%;display:block}
 .tly{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.13em;color:var(--green);margin-bottom:.26rem}
 .tlt{font-family:'Lora',serif;font-size:.93rem;font-weight:600;color:var(--cream);margin-bottom:.17rem}
 .tls{font-size:.81rem;color:var(--cream3);line-height:1.5}
-
-/* ════════════════════════
-   VISI MISI
-════════════════════════ */
 .vbox{padding:2.6rem 2.8rem;background:linear-gradient(135deg,rgba(10,48,22,.42),rgba(14,34,72,.28));border:1px solid rgba(45,184,74,.22);border-radius:var(--r);position:relative;overflow:hidden;margin-bottom:1.2rem}
 .vbox::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--blue2),var(--accent))}
 .vlbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.26em;color:var(--accent);text-transform:uppercase;margin-bottom:.95rem}
@@ -354,10 +274,6 @@ img{max-width:100%;display:block}
 .mc-n{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.18em;color:rgba(0,232,122,.3);margin-bottom:.8rem;display:block}
 .mc-t{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:var(--green2);margin-bottom:.65rem}
 .mc-d{font-size:.82rem;line-height:1.74;color:var(--cream3)}
-
-/* ════════════════════════
-   SWOT
-════════════════════════ */
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.8rem}
 .sc{padding:2rem 1.9rem;border-radius:var(--r);position:relative;overflow:hidden;transition:transform .26s,box-shadow .26s;opacity:0;transform:scale(.96)}
 .sc:hover{transform:scale(1.012);box-shadow:0 16px 46px rgba(0,0,0,.24)}
@@ -372,10 +288,6 @@ img{max-width:100%;display:block}
 .sc.SS .sc-sub{color:var(--green)}.sc.WW .sc-sub{color:#e05050}.sc.OO .sc-sub{color:var(--blue2)}.sc.TT .sc-sub{color:#d4a030}
 .stags{display:flex;flex-wrap:wrap;gap:.38rem}
 .stag{font-size:.77rem;color:var(--cream2);padding:.27rem .62rem;background:rgba(240,244,236,.04);border:1px solid rgba(240,244,236,.08);border-radius:50px}
-
-/* ════════════════════════
-   PROGRAM
-════════════════════════ */
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.8rem}
 .pc2{padding:2.2rem 1.9rem;border:1px solid var(--border2);border-radius:var(--r);background:rgba(255,255,255,.02);transition:all .32s;opacity:0;transform:translateY(15px)}
 .pc2:hover{border-color:rgba(45,184,74,.25);transform:translateY(-4px);background:rgba(45,184,74,.04);box-shadow:0 13px 38px rgba(0,0,0,.2)}
@@ -383,10 +295,6 @@ img{max-width:100%;display:block}
 .pc2-type{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.17em;color:var(--accent);text-transform:uppercase;margin-bottom:.5rem}
 .pc2-name{font-family:'Lora',serif;font-size:1.12rem;font-weight:700;color:var(--cream);margin-bottom:.7rem}
 .pc2-desc{font-size:.83rem;line-height:1.75;color:var(--cream3)}
-
-/* ════════════════════════
-   SKILLS
-════════════════════════ */
 .skgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;margin-top:2.8rem}
 .ski{padding:1.15rem .9rem;text-align:center;border:1px solid var(--border2);border-radius:var(--r2);background:rgba(255,255,255,.02);transition:all .26s;opacity:0;transform:translateY(11px);cursor:default;position:relative;overflow:hidden}
 .ski::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,232,122,.07),rgba(90,140,245,.07));transform:translateY(100%);transition:transform .28s}
@@ -394,20 +302,12 @@ img{max-width:100%;display:block}
 .ski:hover{border-color:rgba(0,232,122,.28);transform:translateY(-3px)}
 .ski-n{font-family:'JetBrains Mono',monospace;font-size:.55rem;color:rgba(0,232,122,.28);letter-spacing:.15em;display:block;margin-bottom:.42rem}
 .ski-t{font-family:'Lora',serif;font-size:.9rem;font-weight:600;color:var(--cream);position:relative;z-index:1}
-
-/* ════════════════════════
-   PRESTASI
-════════════════════════ */
 .pregrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2.8rem}
 .precard{padding:1.8rem 1.7rem;background:linear-gradient(135deg,rgba(14,34,72,.22),rgba(10,48,22,.13));border:1px solid rgba(59,125,232,.15);border-radius:var(--r);position:relative;overflow:hidden;transition:all .26s;opacity:0;transform:translateY(15px)}
 .precard:hover{border-color:rgba(59,125,232,.36);transform:translateY(-3px);box-shadow:0 11px 30px rgba(0,0,0,.2)}
 .preyear{position:absolute;top:0;right:1rem;font-family:'Lora',serif;font-size:4.2rem;font-weight:700;color:rgba(59,125,232,.07);line-height:1}
 .prebadge{display:inline-flex;align-items:center;gap:.36rem;padding:.28rem .72rem;background:rgba(59,125,232,.07);border:1px solid rgba(59,125,232,.18);border-radius:50px;font-family:'JetBrains Mono',monospace;font-size:.57rem;letter-spacing:.13em;color:var(--blue2);text-transform:uppercase;margin-bottom:.75rem}
 .pretitle{font-family:'Lora',serif;font-size:.95rem;font-weight:600;color:var(--cream);line-height:1.42}
-
-/* ════════════════════════
-   KONTAK & KRITIK SARAN
-════════════════════════ */
 .kontak-wrap{display:grid;grid-template-columns:1fr 420px;gap:3.5rem;margin-top:2.8rem;align-items:start}
 .kontak-links{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
 .klink{display:flex;align-items:center;gap:.95rem;padding:.95rem 1.35rem;border:1px solid var(--border2);border-radius:var(--r2);color:var(--cream2);transition:all .24s;background:var(--surface)}
@@ -415,8 +315,6 @@ img{max-width:100%;display:block}
 .klink-ico{font-size:1.08rem;flex-shrink:0}
 .klink-label{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream3);margin-bottom:.12rem}
 .klink-val{font-size:.9rem;font-weight:500}
-
-/* Kritik Saran card */
 .ks-card{background:linear-gradient(160deg,rgba(10,48,22,.35),rgba(14,34,72,.25));border:1px solid rgba(45,184,74,.2);border-radius:var(--r);overflow:hidden;position:sticky;top:2rem}
 .ks-header{padding:1.55rem 1.7rem 1.1rem;border-bottom:1px solid rgba(45,184,74,.12);background:rgba(45,184,74,.04)}
 .ks-header-title{font-family:'Lora',serif;font-size:1.18rem;font-weight:700;color:var(--cream);margin-bottom:.3rem}
@@ -427,8 +325,6 @@ img{max-width:100%;display:block}
 .ks-num{width:24px;height:24px;flex-shrink:0;background:linear-gradient(135deg,var(--green),var(--blue2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:700;color:#fff;margin-top:.1rem}
 .ks-txt{font-size:.85rem;color:var(--cream3);line-height:1.6}
 .ks-txt strong{color:var(--cream2);font-weight:600}
-
-/* Big CTA button */
 .ks-cta{display:flex;align-items:center;justify-content:center;gap:.72rem;width:100%;padding:1rem 1.5rem;background:linear-gradient(135deg,var(--green),#1da83a);border:none;border-radius:var(--r3);font-family:'Lora',serif;font-size:.98rem;font-weight:700;color:#fff;cursor:pointer;transition:all .26s;text-decoration:none}
 .ks-cta:hover{background:linear-gradient(135deg,var(--green2),var(--green));box-shadow:0 8px 30px rgba(45,184,74,.4);transform:translateY(-2px)}
 .ks-cta-ico{font-size:1.05rem;transition:transform .2s}
@@ -439,25 +335,14 @@ img{max-width:100%;display:block}
 .ks-alt-btn.wa:hover{background:rgba(37,211,102,.2);transform:translateY(-2px)}
 .ks-alt-btn.ig{background:rgba(225,48,108,.1);border:1px solid rgba(225,48,108,.25);color:#e1306c}
 .ks-alt-btn.ig:hover{background:rgba(225,48,108,.2);transform:translateY(-2px)}
-
-/* Closing quote */
 .cq{padding:1.8rem 2rem;background:var(--surface);border:1px solid rgba(45,184,74,.14);border-radius:var(--r);margin-top:1.8rem}
 .cq-tag{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:.85rem}
 .cq-text{font-family:'Lora',serif;font-size:.97rem;font-style:italic;font-weight:600;color:var(--cream2);line-height:1.62;margin-bottom:.85rem}
 .cq-author{font-size:.8rem;color:var(--cream3)}
-
-/* ════════════════════════
-   FOOTER
-════════════════════════ */
 footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center;background:var(--bg);flex-wrap:wrap;gap:.85rem}
 .fl{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:var(--green2)}
 .fc{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.11em;color:var(--cream3)}
-
 .rev{opacity:0;transform:translateY(24px)}
-
-/* ════════════════════════
-   RESPONSIVE
-════════════════════════ */
 @media(max-width:1100px){
   :root{--sw:225px}
   .sec{padding:4.5rem 2.5rem}
@@ -520,32 +405,26 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
   <nav class="sb-nav">
     <div class="sb-lbl">MENU UTAMA</div>
     <div class="ni act" data-t="hero"><div class="ni-ico">🏠</div><span class="ni-lbl">Beranda</span><span class="ni-dot"></span></div>
-    <div class="ni" data-t="logo-sec"><div class="ni-ico">🔰</div><span class="ni-lbl">Logo & Filosofi</span><span class="ni-dot"></span></div>
+    <div class="ni" data-t="logo-sec"><div class="ni-ico">🔰</div><span class="ni-lbl">Logo &amp; Filosofi</span><span class="ni-dot"></span></div>
     <div class="ni" data-t="profil"><div class="ni-ico">👤</div><span class="ni-lbl">Profil</span><span class="ni-dot"></span></div>
     <div class="ni" data-t="riwayat"><div class="ni-ico">📋</div><span class="ni-lbl">Riwayat</span><span class="ni-dot"></span></div>
     <div class="sb-lbl">GRAND DESIGN</div>
-    <div class="ni" data-t="visimisi"><div class="ni-ico">🎯</div><span class="ni-lbl">Visi & Misi</span><span class="ni-dot"></span></div>
+    <div class="ni" data-t="visimisi"><div class="ni-ico">🎯</div><span class="ni-lbl">Visi &amp; Misi</span><span class="ni-dot"></span></div>
     <div class="ni" data-t="swot"><div class="ni-ico">📊</div><span class="ni-lbl">Analisis SWOT</span><span class="ni-dot"></span></div>
     <div class="ni" data-t="program"><div class="ni-ico">🚀</div><span class="ni-lbl">Program</span><span class="ni-dot"></span></div>
     <div class="sb-lbl">LAINNYA</div>
     <div class="ni" data-t="skills"><div class="ni-ico">⚡</div><span class="ni-lbl">Skills</span><span class="ni-dot"></span></div>
     <div class="ni" data-t="prestasi"><div class="ni-ico">🏆</div><span class="ni-lbl">Prestasi</span><span class="ni-dot"></span></div>
-    <div class="ni" data-t="kontak"><div class="ni-ico">💬</div><span class="ni-lbl">Kritik & Saran</span><span class="ni-dot"></span></div>
+    <div class="ni" data-t="kontak"><div class="ni-ico">💬</div><span class="ni-lbl">Kritik &amp; Saran</span><span class="ni-dot"></span></div>
   </nav>
   <div class="sb-docs">
     <div class="sb-doc-lbl">UNDUH DOKUMEN</div>
-    <a href="CV_Fikri_Ali_Murtadho.pdf" target="_blank" class="sb-doc-btn">
-      <span>📄</span> Download CV
-    </a>
-    <a href="GRAND_DESIGN_FIKRI_ALI_MURTADHO_S_H.pdf" target="_blank" class="sb-doc-btn blue">
-      <span>📘</span> Grand Design
-    </a>
+    <a href="CV_Fikri_Ali_Murtadho.pdf" target="_blank" class="sb-doc-btn"><span>📄</span> Download CV</a>
+    <a href="GRAND_DESIGN_FIKRI_ALI_MURTADHO_S_H.pdf" target="_blank" class="sb-doc-btn blue"><span>📘</span> Grand Design</a>
+    <a href="Jurnal_Fikri_Ali_Murtadho.pdf" target="_blank" class="sb-doc-btn teal"><span>📰</span> Jurnal Ilmiah</a>
   </div>
   <div class="sb-toggle">
-    <button class="tog" id="togBtn">
-      <span class="tog-arr">◀</span>
-      <span class="tog-lbl">SEMBUNYIKAN</span>
-    </button>
+    <button class="tog" id="togBtn"><span class="tog-arr">◀</span><span class="tog-lbl">SEMBUNYIKAN</span></button>
   </div>
 </aside>
 
@@ -564,28 +443,28 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
 <div class="drawer" id="drawer">
   <div class="d-lbl">MENU</div>
   <div class="dni act" data-t="hero"><span class="dni-ico">🏠</span><span class="dni-txt">Beranda</span></div>
-  <div class="dni" data-t="logo-sec"><span class="dni-ico">🔰</span><span class="dni-txt">Logo & Filosofi</span></div>
+  <div class="dni" data-t="logo-sec"><span class="dni-ico">🔰</span><span class="dni-txt">Logo &amp; Filosofi</span></div>
   <div class="dni" data-t="profil"><span class="dni-ico">👤</span><span class="dni-txt">Profil</span></div>
   <div class="dni" data-t="riwayat"><span class="dni-ico">📋</span><span class="dni-txt">Riwayat</span></div>
   <div class="d-lbl">GRAND DESIGN</div>
-  <div class="dni" data-t="visimisi"><span class="dni-ico">🎯</span><span class="dni-txt">Visi & Misi</span></div>
+  <div class="dni" data-t="visimisi"><span class="dni-ico">🎯</span><span class="dni-txt">Visi &amp; Misi</span></div>
   <div class="dni" data-t="swot"><span class="dni-ico">📊</span><span class="dni-txt">Analisis SWOT</span></div>
   <div class="dni" data-t="program"><span class="dni-ico">🚀</span><span class="dni-txt">Program</span></div>
   <div class="d-lbl">LAINNYA</div>
   <div class="dni" data-t="skills"><span class="dni-ico">⚡</span><span class="dni-txt">Skills</span></div>
   <div class="dni" data-t="prestasi"><span class="dni-ico">🏆</span><span class="dni-txt">Prestasi</span></div>
-  <div class="dni" data-t="kontak"><span class="dni-ico">💬</span><span class="dni-txt">Kritik & Saran</span></div>
+  <div class="dni" data-t="kontak"><span class="dni-ico">💬</span><span class="dni-txt">Kritik &amp; Saran</span></div>
   <div class="d-doc-area">
     <div class="d-lbl" style="padding:.3rem 0 .5rem">UNDUH DOKUMEN</div>
     <a href="CV_Fikri_Ali_Murtadho.pdf" target="_blank" class="d-doc-btn g"><span>📄</span> Download CV</a>
     <a href="GRAND_DESIGN_FIKRI_ALI_MURTADHO_S_H.pdf" target="_blank" class="d-doc-btn b"><span>📘</span> Grand Design</a>
+    <a href="Jurnal_Fikri_Ali_Murtadho.pdf" target="_blank" class="d-doc-btn t"><span>📰</span> Jurnal Ilmiah</a>
   </div>
 </div>
 
-<!-- MAIN -->
 <main class="main" id="main">
 
-<!-- ══════════ HERO ══════════ -->
+<!-- HERO -->
 <section class="sec" id="hero">
   <div class="hero-grid">
     <div>
@@ -595,19 +474,19 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
       <div class="hero-motto" id="hMotto">"Hirup mah kudu gede kahayang, bari jeung buktina"</div>
       <div class="hero-actions" id="hAct">
         <a href="#visimisi" class="btn btn-green"><span class="btn-icon">🎯</span>Lihat Grand Design</a>
-        <a href="#kontak" class="btn btn-outline"><span class="btn-icon">💬</span>Kritik & Saran</a>
+        <a href="#kontak" class="btn btn-outline"><span class="btn-icon">💬</span>Kritik &amp; Saran</a>
       </div>
       <div class="hero-docs" id="hDocs">
         <a href="CV_Fikri_Ali_Murtadho.pdf" target="_blank" class="btn btn-outline btn-sm"><span class="btn-icon">📄</span>Download CV</a>
         <a href="GRAND_DESIGN_FIKRI_ALI_MURTADHO_S_H.pdf" target="_blank" class="btn btn-blue btn-sm"><span class="btn-icon">📘</span>Grand Design PDF</a>
+        <a href="Jurnal_Fikri_Ali_Murtadho.pdf" target="_blank" class="btn btn-teal btn-sm"><span class="btn-icon">📰</span>Jurnal Ilmiah</a>
       </div>
     </div>
     <div class="hphoto" id="hPhoto">
       <div class="pframe">
         <div class="pborder"></div>
         <div class="pinner">
-          <img src="profil.JPEG" alt="Foto Profil"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="profil.JPEG" alt="Foto Profil" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="pph" style="display:none"><div class="av">🧑‍💼</div><span>FOTO PROFIL</span></div>
         </div>
         <div class="pbadge"><div class="pbadge-l">Program</div><div class="pbadge-v">HMI IMPACT</div></div>
@@ -626,165 +505,87 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
   </div>
 </div>
 
-<!-- ══════════ LOGO & FILOSOFI ══════════ -->
+<!-- LOGO & FILOSOFI -->
 <section class="sec" id="logo-sec">
   <div class="slbl rev">Identitas Visual</div>
   <h2 class="stitle rev">Logo &amp; <span class="gg">Filosofi</span></h2>
   <p class="sdesc rev">Logo HMI IMPACT bukan sekadar identitas visual — melainkan sebuah komitmen. Setiap elemen dirancang dengan makna mendalam yang mencerminkan visi perjuangan.</p>
-
-  <!-- Logo centered hero -->
   <div class="logo-hero rev">
     <div class="logo-circle">
-      <img src="logo_impact.png" alt="Logo HMI IMPACT"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="logo-ph-inner" style="display:none">
-        <div class="logo-ph-text">HMI</div>
-        <div class="logo-ph-sub">IMPACT</div>
-      </div>
+      <img src="logo_impact.png" alt="Logo HMI IMPACT" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="logo-ph-inner" style="display:none"><div class="logo-ph-text">HMI</div><div class="logo-ph-sub">IMPACT</div></div>
     </div>
     <div class="logo-name">HMI Cabang Bandung</div>
     <div class="logo-tagline">✦ Fight · Perfect · Impact ✦</div>
   </div>
-
-  <!-- Filosofi tabs — full width -->
   <div class="logo-content rev">
-      <div class="logo-tabs">
-        <button class="logo-tab act" data-panel="simbolisme">🏛️ Simbolisme</button>
-        <button class="logo-tab" data-panel="warna">🎨 Warna</button>
-        <button class="logo-tab" data-panel="nilai">💎 Nilai IMPACT</button>
-        <button class="logo-tab" data-panel="makna">🌟 Makna</button>
+    <div class="logo-tabs">
+      <button class="logo-tab act" data-panel="simbolisme">🏛️ Simbolisme</button>
+      <button class="logo-tab" data-panel="warna">🎨 Warna</button>
+      <button class="logo-tab" data-panel="nilai">💎 Nilai IMPACT</button>
+      <button class="logo-tab" data-panel="makna">🌟 Makna</button>
+    </div>
+    <div class="logo-panel show" id="panel-simbolisme">
+      <div class="fil-items">
+        <div class="fil-item"><div class="fil-ico">🏛️</div><div class="fil-body"><div class="fil-title">Siluet Gedung Sate (Pusat)</div><div class="fil-desc">Representasi kebanggaan HMI Cabang Bandung. Garis tegas gedung melambangkan HMI sebagai poros intelektual dan kepemimpinan di Jawa Barat. Ornamen puncak (tusuk sate) melambangkan <strong>Restorasi Kolektifitas</strong>, satu titik temu dari berbagai komisariat yang tersebar namun tetap tegak dalam satu garis perjuangan.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">🌙</div><div class="fil-body"><div class="fil-title">Bulan Sabit &amp; Sirkuit Digital</div><div class="fil-desc">Mengelilingi Gedung Sate, melambangkan <strong>Revitalisasi Intelektual</strong>. Jalur sirkuit menunjukkan bahwa nilai-nilai keislaman HMI kini terintegrasi dengan skill set masa depan digitalisasi dan ekonomi hijau.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">🟩</div><div class="fil-body"><div class="fil-title">Elemen Piksel Menyatu (Sisi Kiri)</div><div class="fil-desc">Menggambarkan proses <strong>Defragmentasi</strong>. Potongan kotak kecil adalah simbol komisariat-komisariat yang sedang disusun kembali secara terstruktur, sistematis, dan masif menjadi satu kekuatan yang solid.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">⭐</div><div class="fil-body"><div class="fil-title">Bintang Lima Sudut</div><div class="fil-desc">Simbol cita-cita luhur dan kualitas insan cita. Posisinya yang menyatu dengan garis sirkuit melambangkan target <strong>Indonesia Emas 2045</strong> yang dicapai melalui penguasaan teknologi.</div></div></div>
       </div>
-
-      <!-- Panel: Simbolisme Visual -->
-      <div class="logo-panel show" id="panel-simbolisme">
-        <div class="fil-items">
-          <div class="fil-item">
-            <div class="fil-ico">🏛️</div>
-            <div class="fil-body">
-              <div class="fil-title">Siluet Gedung Sate (Pusat)</div>
-              <div class="fil-desc">Representasi kebanggaan HMI Cabang Bandung. Garis tegas gedung melambangkan HMI sebagai poros intelektual dan kepemimpinan di Jawa Barat. Ornamen puncak (tusuk sate) melambangkan <strong>Restorasi Kolektifitas</strong>, satu titik temu dari berbagai komisariat yang tersebar namun tetap tegak dalam satu garis perjuangan.</div>
-            </div>
-          </div>
-          <div class="fil-item">
-            <div class="fil-ico">🌙</div>
-            <div class="fil-body">
-              <div class="fil-title">Bulan Sabit & Sirkuit Digital</div>
-              <div class="fil-desc">Mengelilingi Gedung Sate, melambangkan <strong>Revitalisasi Intelektual</strong>. Jalur sirkuit menunjukkan bahwa nilai-nilai keislaman HMI kini terintegrasi dengan skill set masa depan digitalisasi dan ekonomi hijau.</div>
-            </div>
-          </div>
-          <div class="fil-item">
-            <div class="fil-ico">🟩</div>
-            <div class="fil-body">
-              <div class="fil-title">Elemen Piksel Menyatu (Sisi Kiri)</div>
-              <div class="fil-desc">Menggambarkan proses <strong>Defragmentasi</strong>. Potongan kotak kecil adalah simbol komisariat-komisariat yang sedang disusun kembali secara terstruktur, sistematis, dan masif menjadi satu kekuatan yang solid.</div>
-            </div>
-          </div>
-          <div class="fil-item">
-            <div class="fil-ico">⭐</div>
-            <div class="fil-body">
-              <div class="fil-title">Bintang Lima Sudut</div>
-              <div class="fil-desc">Simbol cita-cita luhur dan kualitas insan cita. Posisinya yang menyatu dengan garis sirkuit melambangkan target <strong>Indonesia Emas 2045</strong> yang dicapai melalui penguasaan teknologi.</div>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="logo-panel" id="panel-warna">
+      <div class="fil-items" style="margin-bottom:1rem">
+        <div class="fil-item"><div class="fil-ico">🟢</div><div class="fil-body"><div class="fil-title">Hijau — Pertumbuhan &amp; Pengabdian</div><div class="fil-desc">Warna dasar organisasi yang melambangkan pertumbuhan, kesuburan ide, dan semangat <strong>Green Syariah Economy</strong>. Menunjukkan HMI tetap berakar pada pengabdian masyarakat.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">🔵</div><div class="fil-body"><div class="fil-title">Biru Modern — Trust &amp; Professional</div><div class="fil-desc">Memberikan kesan segar, modern, dan profesional. Mewakili sifat <strong>Accountable</strong> (dapat dipercaya) dan <strong>Collaborative</strong> (terbuka terhadap kemitraan strategis dengan sektor publik maupun privat).</div></div></div>
+        <div class="fil-item"><div class="fil-ico">⚫</div><div class="fil-body"><div class="fil-title">Hitam — Firmness &amp; Ketegasan</div><div class="fil-desc">Melambangkan ketegasan dalam prinsip dan perjuangan (<strong>Fight</strong>). Warna yang menunjukkan kematangan dan konsistensi dalam setiap langkah perjuangan kader HMI.</div></div></div>
       </div>
-
-      <!-- Panel: Harmoni Warna -->
-      <div class="logo-panel" id="panel-warna">
-        <div class="fil-items" style="margin-bottom:1rem">
-          <div class="fil-item">
-            <div class="fil-ico">🟢</div>
-            <div class="fil-body">
-              <div class="fil-title">Hijau — Pertumbuhan & Pengabdian</div>
-              <div class="fil-desc">Warna dasar organisasi yang melambangkan pertumbuhan, kesuburan ide, dan semangat <strong>Green Syariah Economy</strong>. Menunjukkan HMI tetap berakar pada pengabdian masyarakat.</div>
-            </div>
-          </div>
-          <div class="fil-item">
-            <div class="fil-ico">🔵</div>
-            <div class="fil-body">
-              <div class="fil-title">Biru Modern — Trust & Professional</div>
-              <div class="fil-desc">Memberikan kesan segar, modern, dan profesional. Mewakili sifat <strong>Accountable</strong> (dapat dipercaya) dan <strong>Collaborative</strong> (terbuka terhadap kemitraan strategis dengan sektor publik maupun privat).</div>
-            </div>
-          </div>
-          <div class="fil-item">
-            <div class="fil-ico">⚫</div>
-            <div class="fil-body">
-              <div class="fil-title">Hitam — Firmness & Ketegasan</div>
-              <div class="fil-desc">Melambangkan ketegasan dalam prinsip dan perjuangan (<strong>Fight</strong>). Warna yang menunjukkan kematangan dan konsistensi dalam setiap langkah perjuangan kader HMI.</div>
-            </div>
-          </div>
-        </div>
-        <div class="color-row">
-          <div class="color-chip"><div class="color-dot" style="background:#2db84a"></div><div class="color-chip-txt"><strong>Hijau</strong><span>Pertumbuhan</span></div></div>
-          <div class="color-chip"><div class="color-dot" style="background:#2a5fd4"></div><div class="color-chip-txt"><strong>Biru</strong><span>Kepercayaan</span></div></div>
-          <div class="color-chip"><div class="color-dot" style="background:#111a12;border:1px solid #444"></div><div class="color-chip-txt"><strong>Hitam</strong><span>Ketegasan</span></div></div>
-        </div>
+      <div class="color-row">
+        <div class="color-chip"><div class="color-dot" style="background:#2db84a"></div><div class="color-chip-txt"><strong>Hijau</strong><span>Pertumbuhan</span></div></div>
+        <div class="color-chip"><div class="color-dot" style="background:#2a5fd4"></div><div class="color-chip-txt"><strong>Biru</strong><span>Kepercayaan</span></div></div>
+        <div class="color-chip"><div class="color-dot" style="background:#111a12;border:1px solid #444"></div><div class="color-chip-txt"><strong>Hitam</strong><span>Ketegasan</span></div></div>
       </div>
-
-      <!-- Panel: Nilai IMPACT -->
-      <div class="logo-panel" id="panel-nilai">
-        <p style="font-size:.9rem;color:var(--cream3);line-height:1.75;margin-bottom:1.1rem">Logo ini secara keseluruhan mencerminkan enam pilar utama yang membentuk kerangka nilai <strong style="color:var(--cream2)">IMPACT</strong>:</p>
-        <div class="impact-grid">
-          <div class="impact-cell"><span class="ic-letter">I</span><span class="ic-word">Integrated</span></div>
-          <div class="impact-cell"><span class="ic-letter">M</span><span class="ic-word">Modern</span></div>
-          <div class="impact-cell"><span class="ic-letter">P</span><span class="ic-word">Progressive</span></div>
-          <div class="impact-cell"><span class="ic-letter">A</span><span class="ic-word">Accountable</span></div>
-          <div class="impact-cell"><span class="ic-letter">C</span><span class="ic-word">Collaborative</span></div>
-          <div class="impact-cell"><span class="ic-letter">T</span><span class="ic-word">Transformative</span></div>
-        </div>
-        <div class="fil-items" style="margin-top:1.2rem">
-          <div class="fil-item"><div class="fil-ico">🔗</div><div class="fil-body"><div class="fil-title">Integrated</div><div class="fil-desc">Penyatuan sistem administrasi digital antar komisariat secara terpadu dan sistematis.</div></div></div>
-          <div class="fil-item"><div class="fil-ico">💡</div><div class="fil-body"><div class="fil-title">Modern</div><div class="fil-desc">Adaptasi terhadap ekonomi hijau (Green Syariah) dan penguasaan teknologi masa depan.</div></div></div>
-          <div class="fil-item"><div class="fil-ico">📈</div><div class="fil-body"><div class="fil-title">Progressive</div><div class="fil-desc">Bergerak maju menjemput Indonesia Emas 2045 dengan langkah nyata dan terukur.</div></div></div>
-          <div class="fil-item"><div class="fil-ico">✅</div><div class="fil-body"><div class="fil-title">Accountable</div><div class="fil-desc">Transparansi dalam kolektifitas organisasi dan pertanggungjawaban kepada seluruh kader.</div></div></div>
-          <div class="fil-item"><div class="fil-ico">🤝</div><div class="fil-body"><div class="fil-title">Collaborative</div><div class="fil-desc">Kemitraan strategis lintas sektor pemerintah, swasta, akademisi, dan masyarakat.</div></div></div>
-          <div class="fil-item"><div class="fil-ico">🔄</div><div class="fil-body"><div class="fil-title">Transformative</div><div class="fil-desc">Mengubah tantangan menjadi dampak nyata (Impact) bagi umat dan bangsa.</div></div></div>
-        </div>
+    </div>
+    <div class="logo-panel" id="panel-nilai">
+      <p style="font-size:.9rem;color:var(--cream3);line-height:1.75;margin-bottom:1.1rem">Logo ini secara keseluruhan mencerminkan enam pilar utama yang membentuk kerangka nilai <strong style="color:var(--cream2)">IMPACT</strong>:</p>
+      <div class="impact-grid">
+        <div class="impact-cell"><span class="ic-letter">I</span><span class="ic-word">Integrated</span></div>
+        <div class="impact-cell"><span class="ic-letter">M</span><span class="ic-word">Modern</span></div>
+        <div class="impact-cell"><span class="ic-letter">P</span><span class="ic-word">Progressive</span></div>
+        <div class="impact-cell"><span class="ic-letter">A</span><span class="ic-word">Accountable</span></div>
+        <div class="impact-cell"><span class="ic-letter">C</span><span class="ic-word">Collaborative</span></div>
+        <div class="impact-cell"><span class="ic-letter">T</span><span class="ic-word">Transformative</span></div>
       </div>
-
-      <!-- Panel: Makna Keseluruhan -->
-      <div class="logo-panel" id="panel-makna">
-        <div class="makna-quote">
-          <div class="mq-lbl">Makna Keseluruhan</div>
-          <div class="mq-txt">"Logo ini bukan sekadar identitas visual, melainkan sebuah komitmen bahwa HMI Cabang Bandung siap bertarung (Fight) dalam membenahi internal dan menyempurnakan (Perfect) kontribusi eksternal demi kemajuan umat dan bangsa."</div>
-        </div>
-        <div class="fil-items" style="margin-top:1.2rem">
-          <div class="fil-item">
-            <div class="fil-ico">⚔️</div>
-            <div class="fil-body">
-              <div class="fil-title">Fight — Berjuang ke Dalam</div>
-              <div class="fil-desc">Komitmen untuk membenahi internal organisasi, memperkuat soliditas antar komisariat, dan merestorasi kolektifitas HMI Cabang Bandung.</div>
-            </div>
-          </div>
-          <div class="fil-item">
-            <div class="fil-ico">✨</div>
-            <div class="fil-body">
-              <div class="fil-title">Perfect — Menyempurnakan ke Luar</div>
-              <div class="fil-desc">Kontribusi eksternal yang sempurna kepada masyarakat, bangsa, dan negara melalui program-program strategis yang berdampak nyata.</div>
-            </div>
-          </div>
-          <div class="fil-item">
-            <div class="fil-ico">💥</div>
-            <div class="fil-body">
-              <div class="fil-title">Impact — Hasil yang Nyata</div>
-              <div class="fil-desc">Perpaduan Fight dan Perfect menghasilkan IMPACT — dampak nyata yang dirasakan oleh seluruh kader, masyarakat Bandung, dan Indonesia.</div>
-            </div>
-          </div>
-        </div>
+      <div class="fil-items" style="margin-top:1.2rem">
+        <div class="fil-item"><div class="fil-ico">🔗</div><div class="fil-body"><div class="fil-title">Integrated</div><div class="fil-desc">Penyatuan sistem administrasi digital antar komisariat secara terpadu dan sistematis.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">💡</div><div class="fil-body"><div class="fil-title">Modern</div><div class="fil-desc">Adaptasi terhadap ekonomi hijau (Green Syariah) dan penguasaan teknologi masa depan.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">📈</div><div class="fil-body"><div class="fil-title">Progressive</div><div class="fil-desc">Bergerak maju menjemput Indonesia Emas 2045 dengan langkah nyata dan terukur.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">✅</div><div class="fil-body"><div class="fil-title">Accountable</div><div class="fil-desc">Transparansi dalam kolektifitas organisasi dan pertanggungjawaban kepada seluruh kader.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">🤝</div><div class="fil-body"><div class="fil-title">Collaborative</div><div class="fil-desc">Kemitraan strategis lintas sektor pemerintah, swasta, akademisi, dan masyarakat.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">🔄</div><div class="fil-body"><div class="fil-title">Transformative</div><div class="fil-desc">Mengubah tantangan menjadi dampak nyata (Impact) bagi umat dan bangsa.</div></div></div>
+      </div>
+    </div>
+    <div class="logo-panel" id="panel-makna">
+      <div class="makna-quote">
+        <div class="mq-lbl">Makna Keseluruhan</div>
+        <div class="mq-txt">"Logo ini bukan sekadar identitas visual, melainkan sebuah komitmen bahwa HMI Cabang Bandung siap bertarung (Fight) dalam membenahi internal dan menyempurnakan (Perfect) kontribusi eksternal demi kemajuan umat dan bangsa."</div>
+      </div>
+      <div class="fil-items" style="margin-top:1.2rem">
+        <div class="fil-item"><div class="fil-ico">⚔️</div><div class="fil-body"><div class="fil-title">Fight — Berjuang ke Dalam</div><div class="fil-desc">Komitmen untuk membenahi internal organisasi, memperkuat soliditas antar komisariat, dan merestorasi kolektifitas HMI Cabang Bandung.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">✨</div><div class="fil-body"><div class="fil-title">Perfect — Menyempurnakan ke Luar</div><div class="fil-desc">Kontribusi eksternal yang sempurna kepada masyarakat, bangsa, dan negara melalui program-program strategis yang berdampak nyata.</div></div></div>
+        <div class="fil-item"><div class="fil-ico">💥</div><div class="fil-body"><div class="fil-title">Impact — Hasil yang Nyata</div><div class="fil-desc">Perpaduan Fight dan Perfect menghasilkan IMPACT — dampak nyata yang dirasakan oleh seluruh kader, masyarakat Bandung, dan Indonesia.</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ PROFIL ══════════ -->
+<!-- PROFIL -->
 <section class="sec" id="profil">
   <div class="slbl rev">Tentang Diri</div>
   <h2 class="stitle rev">Profil <span class="gg">Saya</span></h2>
   <div class="prof-layout">
     <div class="prof-card rev">
       <div class="pcard-img">
-        <img src="profil.JPEG" alt="Fikri Ali Murtadho"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="profil.JPEG" alt="Fikri Ali Murtadho" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="pcard-img-ph" style="display:none"><div class="ph-av">👨‍💼</div><p>FOTO PROFIL</p></div>
       </div>
       <div class="pcard-body">
@@ -801,6 +602,7 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
         <div style="display:flex;gap:.5rem;flex-wrap:wrap">
           <a href="CV_Fikri_Ali_Murtadho.pdf" target="_blank" class="btn btn-green btn-sm" style="flex:1;justify-content:center;font-size:.75rem"><span>📄</span> CV</a>
           <a href="GRAND_DESIGN_FIKRI_ALI_MURTADHO_S_H.pdf" target="_blank" class="btn btn-blue btn-sm" style="flex:1;justify-content:center;font-size:.75rem"><span>📘</span> Grand Design</a>
+          <a href="Jurnal_Fikri_Ali_Murtadho.pdf" target="_blank" class="btn btn-teal btn-sm" style="flex:1;justify-content:center;font-size:.75rem"><span>📰</span> Jurnal</a>
         </div>
       </div>
     </div>
@@ -828,7 +630,7 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
   </div>
 </section>
 
-<!-- ══════════ RIWAYAT ══════════ -->
+<!-- RIWAYAT -->
 <section class="sec" id="riwayat">
   <div class="slbl rev">Perjalanan</div>
   <h2 class="stitle rev">Pendidikan &amp; <span class="gb">Organisasi</span></h2>
@@ -856,7 +658,7 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
   </div>
 </section>
 
-<!-- ══════════ VISI MISI ══════════ -->
+<!-- VISI MISI -->
 <section class="sec" id="visimisi">
   <div class="slbl rev">Grand Design</div>
   <h2 class="stitle rev">Visi &amp; <span class="ga">Misi</span></h2>
@@ -873,19 +675,19 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
   </div>
 </section>
 
-<!-- ══════════ SWOT ══════════ -->
+<!-- SWOT -->
 <section class="sec" id="swot">
   <div class="slbl rev">Analisis</div>
   <h2 class="stitle rev">Analisis <span class="gb">SWOT</span></h2>
   <div class="sgrid">
-    <div class="sc SS"><div class="sc-bg">S</div><div class="sc-head">Strengths</div><div class="sc-sub">Kekuatan</div><div class="stags"><span class="stag">Basis Kader Intelektual</span><span class="stag">Historis & Reputasi</span><span class="stag">Jaringan Alumni KAHMI</span><span class="stag">Kemandirian Komisariat</span></div></div>
+    <div class="sc SS"><div class="sc-bg">S</div><div class="sc-head">Strengths</div><div class="sc-sub">Kekuatan</div><div class="stags"><span class="stag">Basis Kader Intelektual</span><span class="stag">Historis &amp; Reputasi</span><span class="stag">Jaringan Alumni KAHMI</span><span class="stag">Kemandirian Komisariat</span></div></div>
     <div class="sc WW"><div class="sc-bg">W</div><div class="sc-head">Weaknesses</div><div class="sc-sub">Kelemahan</div><div class="stags"><span class="stag">Fragmentasi Faksi</span><span class="stag">Digitalisasi Lambat</span><span class="stag">Disparitas Kualitas</span><span class="stag">Krisis Relevansi Isu</span></div></div>
-    <div class="sc OO"><div class="sc-bg">O</div><div class="sc-head">Opportunities</div><div class="sc-sub">Peluang</div><div class="stags"><span class="stag">Pusat Startup & Kreatif</span><span class="stag">Indonesia Emas 2045</span><span class="stag">Isu Lokal Strategis</span><span class="stag">Media Sosial</span></div></div>
+    <div class="sc OO"><div class="sc-bg">O</div><div class="sc-head">Opportunities</div><div class="sc-sub">Peluang</div><div class="stags"><span class="stag">Pusat Startup &amp; Kreatif</span><span class="stag">Indonesia Emas 2045</span><span class="stag">Isu Lokal Strategis</span><span class="stag">Media Sosial</span></div></div>
     <div class="sc TT"><div class="sc-bg">T</div><div class="sc-head">Threats</div><div class="sc-sub">Ancaman</div><div class="stags"><span class="stag">Apolitisme Mahasiswa</span><span class="stag">Kompetisi Komunitas</span><span class="stag">Represi Aturan Kampus</span><span class="stag">Polarisasi Politik</span></div></div>
   </div>
 </section>
 
-<!-- ══════════ PROGRAM ══════════ -->
+<!-- PROGRAM -->
 <section class="sec" id="program">
   <div class="slbl rev">Gerak Nyata</div>
   <h2 class="stitle rev">Program &amp; <span class="gg">Aktivitas</span></h2>
@@ -897,7 +699,7 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
   </div>
 </section>
 
-<!-- ══════════ SKILLS ══════════ -->
+<!-- SKILLS -->
 <section class="sec" id="skills">
   <div class="slbl rev">Kompetensi</div>
   <h2 class="stitle rev">Personal <span class="gb">Skills</span></h2>
@@ -912,53 +714,39 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
   </div>
 </section>
 
-<!-- ══════════ PRESTASI ══════════ -->
+<!-- PRESTASI -->
 <section class="sec" id="prestasi">
   <div class="slbl rev">Pencapaian</div>
   <h2 class="stitle rev">Prestasi &amp; <span class="ga">Training</span></h2>
   <div class="pregrid">
     <div class="precard"><div class="preyear">2022</div><div class="prebadge">🏆 Prestasi</div><div class="pretitle">Awardee Beasiswa Jabar Future Leadership — Kategori Aktivis</div></div>
     <div class="precard"><div class="preyear">2025</div><div class="prebadge">🏆 Prestasi</div><div class="pretitle">Awardee Beasiswa Unggulan — Kategori Mahasiswa Berprestasi</div></div>
-    <div class="precard"><div class="preyear">2017</div><div class="prebadge">📋 Training</div><div class="pretitle">Basic Training PII — Jawa Barat</div></div>
-    <div class="precard"><div class="preyear">2018</div><div class="prebadge">📋 Training</div><div class="pretitle">Intermediate Training PII — Jawa Barat</div></div>
+    <div class="precard"><div class="preyear">2017</div><div class="prebadge">📋 Training</div><div class="pretitle">Basic Training PII Jawa Barat</div></div>
+    <div class="precard"><div class="preyear">2018</div><div class="prebadge">📋 Training</div><div class="pretitle">Intermediate Training PII Jawa Barat</div></div>
     <div class="precard"><div class="preyear">2019</div><div class="prebadge">📋 Training</div><div class="pretitle">Basic Training HMI Komisariat Syariah — Universitas Islam Bandung</div></div>
     <div class="precard"><div class="preyear">2022</div><div class="prebadge">📋 Training</div><div class="pretitle">Intermediate Training HMI Cabang Subang</div></div>
   </div>
 </section>
 
-<!-- ══════════ KONTAK & KRITIK SARAN ══════════ -->
+<!-- KONTAK & KRITIK SARAN -->
 <section class="sec" id="kontak">
-  <div class="slbl rev" style="justify-content:center;text-align:center">Hubungi & Beri Masukan</div>
+  <div class="slbl rev" style="justify-content:center;text-align:center">Hubungi &amp; Beri Masukan</div>
   <h2 class="stitle rev" style="text-align:center">Kritik, Saran &amp; <span class="ga">Kontak</span></h2>
   <p class="sdesc rev" style="margin:0 auto;text-align:center;margin-bottom:0">Dengan memahami Grand Desain ini, diharapkan dapat diberikan kritik, saran dan rekomendasi agar terus bertumbuh. Tetap yakinkan dengan Iman, Ilmu, dan Amal. <strong>YAKUSA!</strong></p>
-
   <div class="kontak-wrap">
-    <!-- Left: kontak info -->
     <div class="rev">
       <h3 style="font-family:'Lora',serif;font-size:1.1rem;font-weight:700;color:var(--cream);margin-bottom:1.3rem">📡 Saluran Komunikasi</h3>
       <div class="kontak-links">
-        <a href="tel:081223520719" class="klink">
-          <span class="klink-ico">📞</span>
-          <div><div class="klink-label">Telepon / WhatsApp</div><div class="klink-val">081223520719</div></div>
-        </a>
-        <a href="mailto:fikrialimurtadho7@gmail.com" class="klink">
-          <span class="klink-ico">✉️</span>
-          <div><div class="klink-label">Email</div><div class="klink-val">fikrialimurtadho7@gmail.com</div></div>
-        </a>
-        <a href="https://instagram.com/murtadho__" target="_blank" class="klink">
-          <span class="klink-ico">📷</span>
-          <div><div class="klink-label">Instagram</div><div class="klink-val">@murtadho__</div></div>
-        </a>
-        <a href="https://instagram.com/hmiimpact" target="_blank" class="klink">
-          <span class="klink-ico">🔰</span>
-          <div><div class="klink-label">Instagram HMI IMPACT</div><div class="klink-val">@hmiimpact</div></div>
-        </a>
+        <a href="tel:081223520719" class="klink"><span class="klink-ico">📞</span><div><div class="klink-label">Telepon / WhatsApp</div><div class="klink-val">081223520719</div></div></a>
+        <a href="mailto:fikrialimurtadho7@gmail.com" class="klink"><span class="klink-ico">✉️</span><div><div class="klink-label">Email</div><div class="klink-val">fikrialimurtadho7@gmail.com</div></div></a>
+        <a href="https://instagram.com/murtadho__" target="_blank" class="klink"><span class="klink-ico">📷</span><div><div class="klink-label">Instagram</div><div class="klink-val">@murtadho__</div></div></a>
+        <a href="https://instagram.com/hmiimpact" target="_blank" class="klink"><span class="klink-ico">🔰</span><div><div class="klink-label">Instagram HMI IMPACT</div><div class="klink-val">@hmiimpact</div></div></a>
       </div>
-      <!-- Doc buttons -->
       <h3 style="font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:1rem">📂 Unduh Dokumen</h3>
       <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2rem">
         <a href="CV_Fikri_Ali_Murtadho.pdf" target="_blank" class="btn btn-green"><span class="btn-icon">📄</span>Download CV</a>
         <a href="GRAND_DESIGN_FIKRI_ALI_MURTADHO_S_H.pdf" target="_blank" class="btn btn-blue"><span class="btn-icon">📘</span>Grand Design PDF</a>
+        <a href="Jurnal_Fikri_Ali_Murtadho.pdf" target="_blank" class="btn btn-teal"><span class="btn-icon">📰</span>Jurnal Ilmiah</a>
       </div>
       <div class="cq">
         <div class="cq-tag">HMI IMPACT — Fight Perfect</div>
@@ -966,48 +754,32 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
         <div class="cq-author">— Fikri Ali Murtadho S.H.</div>
       </div>
     </div>
-
-    <!-- Right: Kritik Saran card -->
     <div class="ks-card rev">
       <div class="ks-header">
-        <div class="ks-header-title">💬 Berikan Kritik & Saran</div>
+        <div class="ks-header-title">💬 Berikan Kritik &amp; Saran</div>
         <div class="ks-header-sub">Masukan Anda sangat berharga untuk penyempurnaan program dan visi HMI IMPACT ke depannya.</div>
       </div>
       <div class="ks-body">
         <div class="ks-steps">
-          <div class="ks-step"><div class="ks-num">1</div><div class="ks-txt">Klik tombol di bawah untuk mengisi <strong>formulir kritik & saran</strong> secara online</div></div>
+          <div class="ks-step"><div class="ks-num">1</div><div class="ks-txt">Klik tombol di bawah untuk mengisi <strong>formulir kritik &amp; saran</strong> secara online</div></div>
           <div class="ks-step"><div class="ks-num">2</div><div class="ks-txt">Isi nama, asal komisariat, dan <strong>masukan Anda</strong> dengan jujur dan konstruktif</div></div>
           <div class="ks-step"><div class="ks-num">3</div><div class="ks-txt">Setiap masukan akan <strong>dibaca dan dipertimbangkan</strong> secara serius</div></div>
         </div>
-
-        <!-- Main CTA: Google Form -->
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0LnDlqPyTNUCgOGG4RnTKvbF1wlztbS75R15wYvTzDe2DSw/viewform?fbclid=PAVERFWAQQ9DBleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAacjSrdyOVOzGMaqEYhnQLlqrwyi3XUStsmVKM8N4lcDFy6ioHCccERT5CfbCA_aem_4e1JD3zP8dCEGrdtgiCyRg" target="_blank" class="ks-cta">
-          <span>✍️</span>
-          <span>Isi Formulir Kritik & Saran</span>
-          <span class="ks-cta-ico">→</span>
+          <span>✍️</span><span>Isi Formulir Kritik &amp; Saran</span><span class="ks-cta-ico">→</span>
         </a>
-
-        <!-- Alt channels -->
         <div class="ks-alt">
-          <a href="https://wa.me/6281223520719" target="_blank" class="ks-alt-btn wa">
-            <span>💬</span> WhatsApp
-          </a>
-          <a href="https://instagram.com/murtadho__" target="_blank" class="ks-alt-btn ig">
-            <span>📷</span> Instagram DM
-          </a>
+          <a href="https://wa.me/6281223520719" target="_blank" class="ks-alt-btn wa"><span>💬</span> WhatsApp</a>
+          <a href="https://instagram.com/murtadho__" target="_blank" class="ks-alt-btn ig"><span>📷</span> Instagram DM</a>
         </div>
-
         <div style="margin-top:1.2rem;padding:.9rem;background:rgba(45,184,74,.05);border:1px solid rgba(45,184,74,.12);border-radius:var(--r3)">
-          <p style="font-size:.8rem;color:var(--cream3);line-height:1.62;text-align:center">
-            💡 <em>Kritik yang membangun adalah hadiah terbaik untuk perjuangan yang lebih baik.</em>
-          </p>
+          <p style="font-size:.8rem;color:var(--cream3);line-height:1.62;text-align:center">💡 <em>Kritik yang membangun adalah hadiah terbaik untuk perjuangan yang lebih baik.</em></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Second marquee -->
 <div class="mwrap">
   <div class="mtrack" style="animation-direction:reverse">
     <span class="mi">DEFRAGMENTASI<span class="dot">·</span></span><span class="mi">SOLIDITAS<span class="dot">·</span></span><span class="mi">REVITALISASI<span class="dot">·</span></span><span class="mi">INTELEKTUAL<span class="dot">·</span></span><span class="mi">KOLABORASI<span class="dot">·</span></span><span class="mi">INDONESIA EMAS 2045<span class="dot">·</span></span>
@@ -1023,8 +795,6 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--border2);display:flex;just
 </main>
 <script>
 gsap.registerPlugin(ScrollTrigger);
-
-/* CURSOR */
 const cEl=document.getElementById('c'),crEl=document.getElementById('cr');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cEl.style.left=mx+'px';cEl.style.top=my+'px'});
@@ -1033,12 +803,8 @@ document.querySelectorAll('a,button,.ni,.dni,.fil-item,.impact-cell,.color-chip'
   el.addEventListener('mouseenter',()=>{cEl.style.width='16px';cEl.style.height='16px';crEl.style.width='48px';crEl.style.height='48px'});
   el.addEventListener('mouseleave',()=>{cEl.style.width='9px';cEl.style.height='9px';crEl.style.width='33px';crEl.style.height='33px'});
 });
-
-/* PARTICLES */
 const pc=document.getElementById('ptcls');
 for(let i=0;i<14;i++){const p=document.createElement('div');p.className='ptcl';p.style.cssText=`left:${Math.random()*100}vw;top:${Math.random()*100}vh;--dur:${4+Math.random()*7}s;--del:${Math.random()*6}s;--dx:${(Math.random()-.5)*60}px`;pc.appendChild(p)}
-
-/* HERO ANIMATE */
 gsap.timeline()
   .to('#hTag',{opacity:1,y:0,duration:.7,ease:'power2.out'},0.45)
   .to('#hName',{opacity:1,y:0,duration:.9,ease:'power3.out'},0.65)
@@ -1047,33 +813,21 @@ gsap.timeline()
   .to('#hAct',{opacity:1,y:0,duration:.65,ease:'power2.out'},1.32)
   .to('#hDocs',{opacity:1,y:0,duration:.6,ease:'power2.out'},1.5)
   .to('#hPhoto',{opacity:1,x:0,duration:1,ease:'power3.out'},0.72);
-
-/* SCROLL REVEALS */
 gsap.utils.toArray('.rev').forEach(el=>{
   gsap.to(el,{scrollTrigger:{trigger:el,start:'top 87%',toggleActions:'play none none none'},opacity:1,y:0,duration:.72,ease:'power3.out'});
 });
-
-/* TIMELINE items */
 gsap.utils.toArray('.tli').forEach((el,i)=>{
   gsap.to(el,{scrollTrigger:{trigger:el,start:'top 90%',toggleActions:'play none none none'},opacity:1,x:0,duration:.58,delay:i*.065,ease:'power2.out'});
 });
-
-/* SWOT cards */
 gsap.utils.toArray('.sc').forEach((el,i)=>{
   gsap.to(el,{scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'},opacity:1,scale:1,duration:.58,delay:i*.08,ease:'back.out(1.2)'});
 });
-
-/* Cards */
 gsap.utils.toArray('.mc,.pc2,.precard').forEach((el,i)=>{
   gsap.to(el,{scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'},opacity:1,y:0,duration:.58,delay:i*.07,ease:'power2.out'});
 });
-
-/* Skills */
 gsap.utils.toArray('.ski').forEach((el,i)=>{
   gsap.to(el,{scrollTrigger:{trigger:'.skgrid',start:'top 85%',toggleActions:'play none none none'},opacity:1,y:0,duration:.48,delay:i*.055,ease:'power2.out'});
 });
-
-/* ── SCROLL NAV ACTIVE ── */
 const secs=document.querySelectorAll('section[id]');
 function updActive(){
   let cur='';
@@ -1083,33 +837,17 @@ function updActive(){
 }
 window.addEventListener('scroll',updActive,{passive:true});
 updActive();
-
 function scroll2(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
-
 document.querySelectorAll('.ni').forEach(n=>{n.addEventListener('click',()=>scroll2(n.dataset.t))});
-
-/* ── SIDEBAR TOGGLE ── */
 const sb=document.getElementById('sidebar'),mainEl=document.getElementById('main');
 let col=false;
-document.getElementById('togBtn').addEventListener('click',()=>{
-  col=!col;sb.classList.toggle('col',col);mainEl.classList.toggle('col',col);
-});
-
-/* ── MOBILE DRAWER ── */
+document.getElementById('togBtn').addEventListener('click',()=>{col=!col;sb.classList.toggle('col',col);mainEl.classList.toggle('col',col);});
 const hamEl=document.getElementById('ham'),drawEl=document.getElementById('drawer');
 let dOpen=false;
-hamEl.addEventListener('click',()=>{
-  dOpen=!dOpen;hamEl.classList.toggle('open',dOpen);drawEl.classList.toggle('open',dOpen);
-  document.body.style.overflow=dOpen?'hidden':'';
-});
+hamEl.addEventListener('click',()=>{dOpen=!dOpen;hamEl.classList.toggle('open',dOpen);drawEl.classList.toggle('open',dOpen);document.body.style.overflow=dOpen?'hidden':'';});
 document.querySelectorAll('.dni').forEach(n=>{
-  n.addEventListener('click',()=>{
-    scroll2(n.dataset.t);
-    dOpen=false;hamEl.classList.remove('open');drawEl.classList.remove('open');document.body.style.overflow='';
-  });
+  n.addEventListener('click',()=>{scroll2(n.dataset.t);dOpen=false;hamEl.classList.remove('open');drawEl.classList.remove('open');document.body.style.overflow='';});
 });
-
-/* ── LOGO TABS ── */
 document.querySelectorAll('.logo-tab').forEach(tab=>{
   tab.addEventListener('click',()=>{
     document.querySelectorAll('.logo-tab').forEach(t=>t.classList.remove('act'));
@@ -1121,6 +859,4 @@ document.querySelectorAll('.logo-tab').forEach(tab=>{
 });
 </script>
 </body>
-
 </html>
-
